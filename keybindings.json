@@ -1,0 +1,38 @@
+[
+  {
+    "key": "j k",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.closeFindWidget", "extension.vim_escape"]
+    },
+    // "command": "closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
+    "key": "j k",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.closeQuickOpen", "extension.vim_escape"]
+    },
+    "when": "inQuickOpen"
+  },
+  // {
+  //   "key": "tab",
+  //   "command": "workbench.action.quickOpenNavigateNext",
+  //   "when": "inQuickOpen"
+  // },
+  // {
+  //   "key": "shift+tab",
+  //   "command": "workbench.action.quickOpenNavigatePrevious",
+  //   "when": "inQuickOpen"
+  // },
+  // {
+  //   "key": "right",
+  //   "command": "workbench.action.quickOpen",
+  //   "when": "inQuickOpen"
+  // }
+//     "key": "j k",
+//     "command": "workbench.action.closeSidebar",
+//     "when": "sideBarFocus"
+//   }
+]
