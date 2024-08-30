@@ -95,8 +95,11 @@
     {
       "before": ["<leader>", "s", "d"],
       // "commands": ["expand_region", "editor.action.clipboardCopyAction", "fuzzySearch.activeTextEditorWithCurrentSelection"]
-      // "commands": ["expand_region", "editor.action.clipboardCopyAction", "fuzzySearchInOne.searchActiveEditorWithSelection"]
-      "commands": ["editor.action.clipboardCopyAction", "fuzzySearchInOne.searchActiveEditorWithSelection"]
+      "commands": [
+        "expand_region",
+        "editor.action.clipboardCopyAction",
+        "fuzzySearchInOne.searchActiveEditorWithSelection"
+      ]
     },
     // {
     //   "before": ["<leader>", "s", "f"],
@@ -270,9 +273,10 @@
     },
     {
       "before": ["<leader>", "s", "d"],
-      // "commands": ["expand_region", "editor.action.clipboardCopyAction", "fuzzySearch.activeTextEditorWithCurrentSelection"]
-      // "commands": ["expand_region", "editor.action.clipboardCopyAction", "fuzzySearchInOne.searchActiveEditorWithSelection"]
-      "commands": ["editor.action.clipboardCopyAction", "fuzzySearchInOne.searchActiveEditorWithSelection"]
+      "commands": [
+        // "editor.action.clipboardCopyAction",
+        "fuzzySearchInOne.searchActiveEditorWithSelection"
+      ]
     },
     // {
     //   "before": ["<leader>", "s", "f"],
@@ -323,4 +327,3 @@
   "git.autofetch": true,
   "git.confirmSync": false,
 }
-
