@@ -28,30 +28,7 @@
   },
   "search.quickOpen.history.filterSortOrder": "default",
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.editor.showTabs": "single"
-
-  // "multiCommand.commands": [
-  //   {
-  //     "command": "multiCommand.multiEscape",
-  //     "sequence": [
-  //       // 聚焦到第一组编辑器上
-  //       "workbench.action.focusFirstEditorGroup",
-  //       // 同时触发 vim 的 esc 效果，避免一些bug 发生
-  //       "extension.vim_escape",
-  //       // 可选：关闭搜索栏图标
-  //       "closeFindWidget",
-  //       // 可选：关闭智能提示栏，有些时候会用到。
-  //       "hideSuggestWidget",
-  //       // 可选：关闭编辑器的提示，有时候 vscode 会报错，然后右下角弹窗口出来
-  //       //      设定这个以后就可以用这个指令关闭了。
-  //       "notifications.clearAll"
-  //     ]
-  //   }
-  // ],
-  // {
-  //   "key": "escape",
-  //   "command": "multiCommand.multiEscape",
-  // },
+  "workbench.editor.showTabs": "single",
   "vim.leader": " ",
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -83,32 +60,21 @@
       "before": ["<leader>", "c", "j"],
       "commands": ["editor.action.revealDefinition"]
     },
-    // {
-    //   "before": ["<leader>", "s", "s"],
-    //   "commands": ["actions.find"]
-    // },
     {
       "before": ["<leader>", "s", "s"],
-      "commands": ["fuzzySearchInOne.searchActiveEditor"]
-      // "commands": ["fuzzySearch.activeTextEditor"]
+      "commands": ["actions.find"]
     },
     {
       "before": ["<leader>", "s", "d"],
-      // "commands": ["expand_region", "editor.action.clipboardCopyAction", "fuzzySearch.activeTextEditorWithCurrentSelection"]
       "commands": [
         "expand_region",
         "editor.action.clipboardCopyAction",
-        "fuzzySearchInOne.searchActiveEditorWithSelection"
+        "actions.find"
       ]
     },
-    // {
-    //   "before": ["<leader>", "s", "f"],
-    //   "commands": ["actions.find"]
-    // },
     {
       "before": ["<leader>", "s", "g"],
-      "commands": ["search.action.openNewEditorToSide"]
-      // "commands": ["workbench.action.findInFiles"]
+      "commands": ["workbench.action.findInFiles"]
     },
     {
       "before": ["<leader>", "g", "s"],
@@ -141,18 +107,20 @@
       ]
     },
     {
-      "before": ["<leader>", "a", "c"],
-      // "before": ["c"],
+      "before": ["<leader>", "c", "c"],
       "commands": ["aichat.newchataction"]
     },
     {
-      "before": ["<leader>", "a", "e"],
-      // "before": ["e"],
+      "before": ["<leader>", "c", "e"],
       "commands": ["aipopup.action.modal.generate"]
     },
     {
       "before": ["<leader>", "c", "f"],
       "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "c", "d"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     {
       "before": ["<leader>", "p", "t"],
@@ -171,34 +139,25 @@
       "commands": ["workbench.action.splitEditorDown"]
     },
     {
-      // "before": ["<leader>", "<right>"],
       "before": ["<leader>", "l"],
       "commands": ["workbench.action.focusRightGroup"]
     },
     {
       "before": ["<leader>", "h"],
-      // "before": ["<leader>", "<left>"],
       "commands": ["workbench.action.focusLeftGroup"]
     },
     {
-      // "before": ["<leader>", "<down>"],
       "before": ["<leader>", "j"],
       "commands": ["workbench.action.focusBelowGroup"]
     },
     {
-      // "before": ["<leader>", "<up>"],
       "before": ["<leader>", "k"],
       "commands": ["workbench.action.focusAboveGroup"]
     },
     {
       "before": ["<leader>", "`"],
       "commands": "workbench.action.terminal.new"
-      //"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
     },
-    // {
-    //   "before": ["<leader>", "p", "r"],
-    //   "commands": ["godotTools.debugger.debugCurrentFile"]
-    // },
     {
       "before": ["<leader>", "r", "r"],
       "commands": ["workbench.action.debug.start"],
@@ -213,25 +172,14 @@
       "before": ["<leader>", "r", "c"],
       "commands": ["godotTools.debugger.debugCurrentFile"]
     },
-// {
-//   "key": "f5",
-//   "command": "workbench.action.debug.start",
-//   "when": "debuggersAvailable && debugState == 'inactive'"
-// }
-    // {
-    //   "before": ["j", "k"],
-    //   "commands": [
-    //     "closeParameterHints",
-    //     "hideSuggestWidget",
-    //     "closeMarkersNavigation",
-    //     "closeFindWidget",
-    //     "removeSecondaryCursors",
-    //     "cancelSelection",
-    //     "closeReferenceSearch",
-    //     "closeReferenceSearchEditor",
-    //     "closeReferences"
-    //   ]
-    // }
+    {
+      "before": ["<leader>", "a"],
+      "after": ["g", "g", "v", "G"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -268,24 +216,15 @@
     },
     {
       "before": ["<leader>", "s", "s"],
-      "commands": ["fuzzySearchInOne.searchActiveEditor"]
-      // "commands": ["fuzzySearch.activeTextEditor"]
+      "commands": ["actions.find"]
     },
     {
       "before": ["<leader>", "s", "d"],
-      "commands": [
-        // "editor.action.clipboardCopyAction",
-        "fuzzySearchInOne.searchActiveEditorWithSelection"
-      ]
+      "commands": ["actions.find"]
     },
-    // {
-    //   "before": ["<leader>", "s", "f"],
-    //   "commands": ["actions.find"]
-    // },
     {
       "before": ["<leader>", "s", "g"],
-      "commands": ["search.action.openNewEditorToSide"]
-      // "commands": ["workbench.action.findInFiles"]
+      "commands": ["workbench.action.findInFiles"]
     },
     {
       "before": ["v"],
@@ -297,13 +236,11 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "a", "c"],
-      // "before": ["c"],
+      "before": ["<leader>", "c", "c"],
       "commands": ["aichat.newchataction"]
     },
     {
-      "before": ["<leader>", "a", "e"],
-      // "before": ["e"],
+      "before": ["<leader>", "c", "e"],
       "commands": ["aipopup.action.modal.generate"]
     },
     {
@@ -325,5 +262,5 @@
   ],
   "cursor.chat.smoothStreaming": true,
   "git.autofetch": true,
-  "git.confirmSync": false,
+  "git.confirmSync": false
 }

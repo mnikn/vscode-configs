@@ -1,9 +1,10 @@
+// Place your key bindings in this file to override the defaults
 [
   {
     "key": "j k",
     "command": "runCommands",
     "args": {
-      "commands": ["workbench.action.closeFindWidget", "extension.vim_escape"]
+      "commands": ["closeFindWidget", "extension.vim_escape"]
     },
     // "command": "closeFindWidget",
     "when": "editorFocus && findWidgetVisible && !isComposing"
@@ -16,6 +17,103 @@
     },
     "when": "inQuickOpen"
   },
+  // {
+  //   "key": "<Esc>",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": ["workbench.action.toggleSidebarVisibility"]
+  //   },
+  //   // "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  //   "when": "explorerViewletVisible"
+  // }
+
+  // explore
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "o",
+    "command": "filesExplorer.openFilePreserveFocus",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "cmd+j",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "shift+j",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "cmd+k",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "shift+k",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  }
+
+  // {
+  //   "key": "j k",
+  //   "after": ["<Esc>"],
+  //   "when": "editorHoverFocused"
+  // }
   // {
   //   "key": "tab",
   //   "command": "workbench.action.quickOpenNavigateNext",
@@ -31,8 +129,9 @@
   //   "command": "workbench.action.quickOpen",
   //   "when": "inQuickOpen"
   // }
-//     "key": "j k",
-//     "command": "workbench.action.closeSidebar",
-//     "when": "sideBarFocus"
-//   }
+  //     "key": "j k",
+  //     "command": "workbench.action.closeSidebar",
+  //     "when": "sideBarFocus"
+  //   }
 ]
+
